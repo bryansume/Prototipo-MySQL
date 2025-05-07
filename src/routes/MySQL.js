@@ -5,10 +5,10 @@ const mysql = require("mysql");
 
 //Create MySQL conexion
 const db = mysql.createConnection({
-  host: "sq17.freemysqlhosting.net",
-  user: "",
-  password: "",
-  database: "",
+  host: "fdb1030.awardspace.net",
+  user: "4630702_prueba",
+  password: "g/[T/exn4P^^]Nd9",
+  database: "4630702_prueba",
 });
 db.connect((error) => {
   if (error) {
