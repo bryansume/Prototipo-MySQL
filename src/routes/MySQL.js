@@ -5,10 +5,11 @@ const mysql = require("mysql");
 
 //Create MySQL conexion
 const db = mysql.createConnection({
-  host: "fdb1030.awardspace.net",
-  user: "4630702_prueba",
-  password: "g/[T/exn4P^^]Nd9",
-  database: "4630702_prueba",
+  //En esta ocasión probamos en local aver si funciona corectamente
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "PI_010_MySQL",
 });
 db.connect((error) => {
   if (error) {
@@ -31,7 +32,7 @@ router.get("/GETMySQL", (req, res) => {
 //POST
 router.post("/POSTMySQL", (req, res) => {
   // Se insertara lo siguiente a la base de datos
-  let post = { nombre: "UsuarioNODE", pass: "UsuarioNODE" };
+  let post = { nombre: "UsuarioConXAMPP", pass: "UsuarioConXAMPP" };
   let sql = "INSERT INTO Usuarios SET ?";
   let query = db.query(sql, post, (err, result) => {
     console.log(result);
