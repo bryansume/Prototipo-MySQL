@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 //Settings
-app.set("port", process.env.PORT || 3306);
+app.set("port", process.env.PORT || 8080);
 app.set("json spaces", 2);
 
 //Middleware
@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
-app.use(require("./routes/index"));
-app.use("api/MySQL", require("./routes/MySQL"));
+app.use(require("./routes/MySQL"));
+app.use("/api/MySQL", require("./routes/MySQL"));
 
 //Starting the server
 app.listen(app.get("port"), () => {
