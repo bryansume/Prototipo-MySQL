@@ -29,8 +29,9 @@ router.get("/GETMySQL", (req, res) => {
 });
 
 //POST
-router.get("/POSTMySQL", (req, res) => {
-  let post = { nombre: "UsuarioNODE", pass: UsuarioNODE };
+router.post("/POSTMySQL", (req, res) => {
+  // Se insertara lo siguiente a la base de datos
+  let post = { nombre: "UsuarioNODE", pass: "UsuarioNODE" };
   let sql = "INSERT INTO Usuarios SET ?";
   let query = db.query(sql, post, (err, result) => {
     console.log(result);
